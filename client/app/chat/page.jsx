@@ -143,7 +143,7 @@ const ChatInterface = () => {
   return (
     <div className={`flex h-screen transition-colors duration-500 ${
       darkMode 
-        ? 'dark' 
+        ? 'dark bg-slate-900' 
         : 'bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100'
     }`}>
       {/* Sidebar */}
@@ -339,7 +339,9 @@ const ChatInterface = () => {
       )}
       
       {/* Main Content */}
-      <div className="flex flex-col flex-1 h-screen">
+      <div className={`flex flex-col flex-1 h-screen ${
+        darkMode ? 'bg-slate-900' : ''
+      }`}>
       {/* Header */}
       <div className={`backdrop-blur-md border-b transition-all relative z-30 ${
         darkMode 
@@ -485,7 +487,9 @@ const ChatInterface = () => {
       </div>
 
       {/* Messages Area */}
-      <div className="flex-1 overflow-y-auto px-4 py-4">
+      <div className={`flex-1 overflow-y-auto px-4 py-4 ${
+        darkMode ? 'bg-slate-900' : ''
+      }`}>
         <div className="max-w-5xl mx-auto space-y-6">
           {/* Error Banner */}
           {error && (
